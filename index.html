@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Civic AI Assistant</title>
+    <meta name="description" content="AI Assistant for Indian citizens resolving civic issues">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar for summaries -->
+        <aside class="dashboard">
+            <div class="dashboard-header">
+                <h2>📋 Civic Reports</h2>
+                <p>Active complaint summaries</p>
+            </div>
+            <div id="reportsContainer" class="reports-container">
+                <!-- Generated complaints will appear here -->
+                <div class="empty-state">No active complaints yet.</div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-wrapper">
+            <header class="chat-header">
+                <div class="bot-info">
+                    <div class="bot-avatar">🏛️</div>
+                    <div class="bot-details">
+                        <h1>Smart Civic Support Officer</h1>
+                        <p class="status">Online &bull; Speaks Hindi, English, Marathi, Hinglish</p>
+                    </div>
+                </div>
+                <!-- API Key Configuration Modal Trigger -->
+                <button id="configBtn" class="glass-btn">⚙️ Settings</button>
+            </header>
+
+            <div id="chatBox" class="chat-box">
+                <!-- Welcome Message -->
+                <div class="message bot">
+                    <div class="msg-bubble">
+                        Namaste! 🙏 Main aapka Smart Civic Support Officer hoon. Mujhe isiliye banaya gaya hai taaki
+                        main aapki civic problems (paani, bijli, sadak, kachra aadi) samajh saku aur sahi department tak
+                        pahoncha saku. Aap apni problem English, Hindi, Marathi, ya Hinglish mein bata sakte hain. Aaj
+                        main aapki kya madad kar sakta hoon?
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <div class="input-glass">
+                    <textarea id="userInput"
+                        placeholder="Type your problem here... (e.g., Paani ka pipeline phoot gaya hai road pe)"
+                        rows="1"></textarea>
+                    <button id="sendBtn" class="send-btn" aria-label="Send Message">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+                <div class="disclaimer">Powered by AI - Detects urgency & routes to the right department.</div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal hidden">
+        <div class="modal-content glass-panel">
+            <h2>⚙️ API Settings</h2>
+            <p>Enter your Gemini API Key to enable real AI processing (otherwise, it will run in smart simulation mode).
+            </p>
+            <input type="password" id="apiKeyInput" placeholder="Enter Gemini API Key..." />
+            <div class="modal-actions">
+                <button id="closeSettingsBtn" class="btn-cancel">Close</button>
+                <button id="saveSettingsBtn" class="btn-save">Save Key</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Markdown Parser (for rendering response formatting) -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
