@@ -1,0 +1,61 @@
+:root {
+  --bg: #0b0f14;
+  --panel: #111722;
+  --accent: #4f46e5;
+  --accent-2: #22c55e;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --danger: #ef4444;
+}
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; background: var(--bg); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+button { cursor: pointer; }
+
+.app { max-width: 960px; margin: 0 auto; padding: 24px; }
+.app-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.brand { display: flex; align-items: center; gap: 10px; }
+.logo { display: inline-flex; width: 28px; height: 28px; border-radius: 50%; align-items: center; justify-content: center; background: linear-gradient(135deg,#4f46e5,#06b6d4); }
+.brand h1 { font-size: 20px; margin: 0; }
+.nav button { background: transparent; border: 1px solid #23304a; color: var(--text); padding: 8px 12px; border-radius: 8px; margin-left: 8px; }
+.nav button.active { background: var(--accent); border-color: var(--accent); }
+
+.app-footer { margin-top: 20px; color: var(--muted); font-size: 12px; text-align: center; }
+
+.voice-chat .controls { display: flex; align-items: center; justify-content: space-between; background: var(--panel); padding: 12px; border-radius: 12px; border: 1px solid #1f2a3d; min-height: 64px; }
+.lang-toggle select { background: #0f1522; color: var(--text); border: 1px solid #22304a; border-radius: 8px; padding: 6px 8px; }
+.call-controls { display: flex; align-items: center; gap: 10px; flex-wrap: nowrap; }
+.primary { background: var(--accent); color: white; border: none; padding: 10px 14px; border-radius: 999px; min-width: 160px; text-align: center; }
+.primary.disabled { opacity: 0.6; cursor: not-allowed; }
+.secondary { background: var(--accent-2); color: black; border: none; padding: 10px 14px; border-radius: 999px; }
+.ghost { background: transparent; border: 1px solid #23304a; color: var(--text); padding: 10px 14px; border-radius: 999px; min-width: 120px; text-align: center; }
+.duration { color: var(--muted); min-width: 100px; text-align: right; font-variant-numeric: tabular-nums; }
+.status { color: var(--muted); min-width: 120px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.input-panel { display: grid; grid-template-columns: 1fr auto; gap: 10px; margin-top: 14px; }
+.input-panel textarea { background: var(--panel); border: 1px solid #1f2a3d; color: var(--text); border-radius: 12px; padding: 12px; resize: vertical; }
+
+.chat-list { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+.bubble { border-radius: 16px; padding: 12px; border: 1px solid #1f2a3d; }
+.bubble.user { background: #0f1522; align-self: flex-end; }
+.bubble.ai { background: var(--panel); align-self: flex-start; }
+.bubble-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.who { color: var(--muted); font-size: 12px; }
+.badges { display: flex; gap: 6px; }
+.badge { font-size: 11px; padding: 4px 8px; border-radius: 999px; border: 1px solid #1f2a3d; background: #0f1522; color: var(--text); }
+.badge.intent { color: #06b6d4; border-color: #0e3a4a; background: #06202a; }
+.badge.urgency-high { color: white; background: #7c201f; border-color: #a22927; }
+.badge.urgency-medium { color: #fde68a; background: #4a3710; border-color: #7c5a14; }
+.badge.urgency-low { color: #a7f3d0; background: #0f3a2c; border-color: #14532d; }
+.badge.emotion-angry { color: white; background: #6b1f1f; border-color: #8b2323; }
+.badge.emotion-happy { color: #bef264; background: #203318; border-color: #2f4f1f; }
+.badge.emotion-confused { color: #c7d2fe; background: #242a47; border-color: #303867; }
+.badge.emotion-neutral { color: var(--muted); }
+
+.alert.high { margin-top: 12px; background: #3b1b1b; color: #fecaca; border: 1px solid #7f1d1d; padding: 12px; border-radius: 12px; }
+
+.analytics h2 { margin: 8px 0 12px; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.card { background: var(--panel); border: 1px solid #1f2a3d; border-radius: 12px; padding: 16px; }
+.card-title { color: var(--muted); font-size: 13px; }
+.card-value { font-size: 24px; font-weight: 700; }
+.note { color: var(--muted); font-size: 12px; margin-top: 10px; }
